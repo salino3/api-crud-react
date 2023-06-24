@@ -3,5 +3,5 @@ export interface Routes {
 };
 
 export const SwitchRoutes: Routes = {
-    root: '/'
+  root: "/api-crud-react",
 };
