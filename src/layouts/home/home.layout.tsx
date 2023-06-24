@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeScene } from '../../scene';
+import { HomeScene } from '@/scene';
 
 export const HomeLayout: React.FC = () => {
     
