@@ -1,14 +1,15 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import { HomeLayout } from '@/layouts';
+import { HomeLayout, SecondPageLayout } from '@/layouts';
 import { SwitchRoutes } from '.';
 
 export const AppRouter: React.FC = () => {
   return (
     <>
-     <Routes>
+      <Routes>
         <Route path={SwitchRoutes.root} element={<HomeLayout />} />
-     </Routes>
+        <Route path={SwitchRoutes.second_page} element={<SecondPageLayout />} />
+      </Routes>
     </>
-    )
+  );
 }
