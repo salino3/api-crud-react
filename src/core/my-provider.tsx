@@ -1,28 +1,28 @@
 import React from 'react';
-import { GlobalContext, MyReducer, Albums, albums } from '.';
+import { GlobalContext, MyReducer } from '.';
 import axios from 'axios';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
-//   children: React.ReactNode;
 };
 
 export const MyProvider: React.FC<Props> = ({children}) => {
 
-    const [state, dispatch] = React.useReducer(MyReducer, { albums: [] });
+    const [state, dispatch] = React.useReducer(MyReducer, { characters: [] });
 
 
   const getAlbums = React.useCallback(async () => {
 
     try {
         
-        const response = await axios
-           .get("https://jsonplaceholder.typicode.com/photos")
+        const response = await axios.get(
+          "https://rickandmortyapi.com/api/character"
+        );
             
            dispatch({
-               type: "GET_ALBUMS",
-               payload: response.data,
-             });
+             type: "GET_CHARACTERS",
+             payload: response.data.results,
+           });
     } catch (error) {
         console.error(error);
     };
@@ -32,7 +32,7 @@ export const MyProvider: React.FC<Props> = ({children}) => {
   getAlbums();
  }, []);
  
- console.log("state", state);
+ console.log("state", state.characters);
 
   return(
    <GlobalContext.Provider value={{state, dispatch, getAlbums}}>
