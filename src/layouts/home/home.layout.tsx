@@ -1,13 +1,12 @@
-import React from 'react';
 import { HomeScene } from '@/scene';
+import React from 'react';
+
 
 export const HomeLayout: React.FC = () => {
     
   return (
     <>
-     <h1>
-      <HomeScene />
-     </h1>
+     <HomeScene />
     </>
       )
 }
