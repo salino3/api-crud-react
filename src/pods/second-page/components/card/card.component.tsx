@@ -11,7 +11,7 @@ export const Card: React.FC<Props> = (props) => {
 
   return (
     <div className={classes.container}>
-      <img src={item.image} alt={`${item.name}\`s image`} />
+      <img className={classes.img} src={item.image} alt={`${item.name}\`s image`} />
       <div>
         <h3>
           Name: <span>{item.name}</span>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Characters, GlobalContext, MyState } from '@/core';
 import { Card } from '../card';
 import { SwitchRoutes } from '@/router';
-import { BtnsPagination } from '@/common';
+import { BtnsPagination, FormSearch } from '@/common';
 import * as classes from './body-s-page.styles'
 
 export const BodySndPage: React.FC = () => {
@@ -14,6 +14,7 @@ export const BodySndPage: React.FC = () => {
   return (
     <div className={classes.root}>
       Hola from second page list
+      <FormSearch />
       <div className={classes.contenedorList}>
         <BtnsPagination
           route={SwitchRoutes.root}

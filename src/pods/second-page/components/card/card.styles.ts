@@ -20,3 +20,14 @@ export const container = css`
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 `;
+
+
+export const img = css`
+  width: 100px;
+  height: 100px;
+
+  @media (min-width: 725px) {
+    width: 350px;
+    height: 350px;
+  }
+`;
