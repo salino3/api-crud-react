@@ -27,6 +27,7 @@ export interface Characters {
   episode?: string[];
   url?: string;
   created?: string;
+  description?: string;
 }
 
 

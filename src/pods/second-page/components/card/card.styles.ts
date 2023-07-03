@@ -4,7 +4,7 @@ export const container = css`
   display: flex;
   flex-direction: row;
   gap: 24px;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 22px;
   font-weight: 600;
   font-family: "Courier New", Courier, monospace;
@@ -21,6 +21,10 @@ export const container = css`
   }
 `;
 
+export const content = css`
+ width: 100%;
+ 
+`;
 
 export const img = css`
   width: 100px;
@@ -31,3 +35,4 @@ export const img = css`
     height: 350px;
   }
 `;
+

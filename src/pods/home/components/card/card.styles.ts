@@ -17,7 +17,7 @@ export const container = css`
     color: #ffb703;
     font-size: 18px;
     font-weight: 500;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
   }
 `;
 
@@ -29,4 +29,8 @@ export const img = css`
     width: 350px;
     height: 350px;
   }
+`;
+
+export const content = css`
+  width: 100%;
 `;
