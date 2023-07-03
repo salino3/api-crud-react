@@ -1,34 +1,33 @@
 import React from 'react';
-import {  Characters, GlobalContext, MyState } from '@/core';
+import { Characters, GlobalContext, MyState } from '@/core';
 import { Card } from '../card';
 import { SwitchRoutes } from '@/router';
 import { BtnsPagination, FormSearch } from '@/common';
-import * as classes from './body.styles';
+import * as classes from './body-s-page.styles'
 
-export const Body: React.FC = () => {
+export const BodySndPage: React.FC = () => {
 
- const {state} = React.useContext<MyState>(GlobalContext);
+   const { state } = React.useContext<MyState>(GlobalContext);
 
- const [num, setNum] = React.useState<number>(5);
-
-
+   const [num, setNum] = React.useState<number>(15);
+  
   return (
     <div className={classes.root}>
-      Hola from Home Component!
+      Hola from second page list
       <FormSearch />
       <div className={classes.contenedorList}>
         <BtnsPagination
-          route={SwitchRoutes.second_page}
-          text="Next page"
+          route={SwitchRoutes.root}
+          text="Previus page"
           setNum={setNum}
         />
         {state &&
           state.characters
-            .slice(0, num > 10 ? 10 : num)
+            .slice(10, num)
             .map((item: Characters) => <Card item={item} key={item.id} />)}
         <BtnsPagination
-          route={SwitchRoutes.second_page}
-          text="Next page"
+          route={SwitchRoutes.root}
+          text="Previus page"
           setNum={setNum}
         />
       </div>

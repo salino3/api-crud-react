@@ -4,8 +4,16 @@ interface GET_CHARACTERS {
   payload: Characters[];
 };
 
+export interface CREATE_DESCRIPTION {
+  type: "CREATE_DESCRIPTION";
+  payload: {
+    characterId: number;
+    description: string;
+  };
+}
 
-export type All_Actions = GET_CHARACTERS;
+
+export type All_Actions = GET_CHARACTERS | CREATE_DESCRIPTION;
 
 
 //
@@ -27,6 +35,7 @@ export interface Characters {
   episode?: string[];
   url?: string;
   created?: string;
+  description?: string;
 }
 
 
@@ -42,6 +51,7 @@ export interface MyState {
   state: State;
   dispatch: React.Dispatch<All_Actions>;
   getAlbums: (characters: Characters[]) => void;
+  createDescription: (characterId: number, description: string) => void;
 }
 
 

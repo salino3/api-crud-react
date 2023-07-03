@@ -4,7 +4,7 @@ export const container = css`
   display: flex;
   flex-direction: row;
   gap: 24px;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 22px;
   font-weight: 600;
   font-family: "Courier New", Courier, monospace;
@@ -17,8 +17,13 @@ export const container = css`
     color: #ffb703;
     font-size: 18px;
     font-weight: 500;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
+`;
+
+export const content = css`
+ width: 100%;
+ 
 `;
 
 export const img = css`
@@ -31,20 +36,3 @@ export const img = css`
   }
 `;
 
-export const content = css`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const linkDesc = css`
- 
- position: relative;
- font-size: medium;
- margin-left: auto;
- border: solid 1px;
- padding: 0px 3px;
- border-radius: 2px;
-
-
-`;
