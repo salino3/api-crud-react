@@ -1,4 +1,4 @@
-import { All_Actions, State } from "./interface";
+import { All_Actions, Characters, State } from "./interface";
 
 
 
@@ -8,6 +8,20 @@ export const MyReducer = (state: State, action: All_Actions) => {
       return {
         ...state,
         characters: action.payload,
+      };
+    case "CREATE_DESCRIPTION":
+      const updatedCharacters = state.characters.map((character) => {
+        if (character.id === action.payload.characterId) {
+          return {
+            ...character,
+            description: action.payload.description,
+          };
+        }
+        return character;
+      });
+      return {
+        ...state,
+        characters: updatedCharacters,
       };
 
     default:

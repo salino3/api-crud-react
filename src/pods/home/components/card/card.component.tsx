@@ -2,6 +2,7 @@ import React from 'react';
 import { Characters } from '@/core';
 import { Description } from '@/common/description';
 import * as classes from './card.styles';
+import { Link } from 'react-router-dom';
 
 interface Props {
   item: Characters;
@@ -18,6 +19,7 @@ export const Card: React.FC<Props> = (props) => {
         alt={`${item.name}\`s image`}
       />
       <div className={classes.content}>
+        <Link to={'/'}  className={classes.linkDesc}>Add Description</Link>
         <h3>
           Name: <span>{item.name}</span>
         </h3>

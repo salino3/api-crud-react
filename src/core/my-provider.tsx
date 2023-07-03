@@ -1,6 +1,6 @@
 import React from 'react';
-import { GlobalContext, MyReducer } from '.';
 import axios from 'axios';
+import { Characters, GlobalContext, MyReducer } from '.';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
@@ -14,12 +14,11 @@ export const MyProvider: React.FC<Props> = ({children}) => {
   const getAlbums = React.useCallback(async () => {
 
     try {
-        
         const response = await axios.get(
           "https://rickandmortyapi.com/api/character"
-        );
-            
-           dispatch({
+        );           
+          
+        dispatch({
              type: "GET_CHARACTERS",
              payload: response.data.results,
            });
@@ -31,12 +30,29 @@ export const MyProvider: React.FC<Props> = ({children}) => {
  React.useEffect(() => {
   getAlbums();
  }, []);
- 
- console.log("state", state.characters);
 
-  return(
-   <GlobalContext.Provider value={{state, dispatch, getAlbums}}>
-    {children}
-   </GlobalContext.Provider>
-   );
+
+const createDescription = React.useCallback(
+  (characterId: number, description: string) => {
+    dispatch({
+      type: "CREATE_DESCRIPTION",
+      payload: {
+        characterId,
+        description,
+      },
+    });
+  },
+  []
+);
+
+
+ 
+
+  return (
+    <GlobalContext.Provider
+      value={{ state, dispatch, getAlbums, createDescription }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 }
