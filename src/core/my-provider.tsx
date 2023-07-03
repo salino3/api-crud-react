@@ -48,11 +48,9 @@ const createDescription = React.useCallback(
 
  
 
-  return (
-    <GlobalContext.Provider
-      value={{ state, dispatch, getAlbums, createDescription }}
-    >
-      {children}
-    </GlobalContext.Provider>
-  );
+  return(
+   <GlobalContext.Provider value={{state, dispatch, getAlbums, createDescription}}>
+    {children}
+   </GlobalContext.Provider>
+   );
 }
