@@ -5,9 +5,19 @@ export const root = css`
 `;
 
 export const title = css`
- 
- font-size: 42px;
- text-align: center;
+  font-size: 42px;
+  text-align: center;
+`;
+
+export const subTitle = css`
+  margin-top: 16px;
+  font-size: 30px;
+  text-align: center;
+  color: green;
+
+  span {
+    color: grey;
+  }
 `;
 
 export const form = css`

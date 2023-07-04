@@ -32,19 +32,18 @@ export const img = css`
 `;
 
 export const content = css`
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const linkDesc = css`
- 
- position: relative;
- font-size: medium;
- margin-left: auto;
- border: solid 1px;
- padding: 0px 3px;
- border-radius: 2px;
-
-
+  position: relative;
+  font-size: medium;
+  margin-left: auto;
+  margin-bottom: 3px;
+  color: blue;
+  border: solid 1px;
+  padding: 0px 3px;
+  border-radius: 2px;
 `;
