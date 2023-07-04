@@ -20,7 +20,6 @@ export const descTitle = css`
   padding: 0px 8px;
   border-radius: 5px 0px 8px 0px;
 
-
 `;
 
 

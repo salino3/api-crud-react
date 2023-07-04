@@ -11,12 +11,16 @@ export const title = css`
 
 export const subTitle = css`
   margin-top: 16px;
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
   color: green;
 
   span {
     color: grey;
+  }
+
+  @media (min-width: 725px) {
+    font-size: 32px;
   }
 `;
 

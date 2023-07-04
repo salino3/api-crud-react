@@ -20,7 +20,15 @@ export const Card: React.FC<Props> = (props) => {
         alt={`${item.name}\`s image`}
       />
       <div className={classes.content}>
-        <Link to={`${SwitchRoutes.desc_form}/${item?.id}`}  className={classes.linkDesc}>Add Description</Link>
+        <div className={classes.boxBtns}>
+          <Link
+            to={`${SwitchRoutes.desc_form}/${item?.id}`}
+            className={classes.linkDesc}
+          >
+            Add Text
+          </Link>
+          <button className={classes.deleteDesc}>Delete</button>
+        </div>
         <h3>
           Name: <span>{item.name}</span>
         </h3>

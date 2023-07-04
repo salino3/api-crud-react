@@ -37,12 +37,29 @@ export const content = css`
   width: 100%;
 `;
 
+export const boxBtns = css`
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-left: auto;
+`;
+
 export const linkDesc = css`
   position: relative;
   font-size: medium;
-  margin-left: auto;
   margin-bottom: 3px;
   color: blue;
+  border: solid 1px;
+  padding: 0px 3px;
+  border-radius: 2px;
+`;
+
+export const deleteDesc = css`
+  position: relative;
+  font-size: medium;
+  margin-bottom: 3px;
+  background-color: transparent;
+  color: red;
   border: solid 1px;
   padding: 0px 3px;
   border-radius: 2px;
