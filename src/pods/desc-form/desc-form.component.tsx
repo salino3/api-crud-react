@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { cx } from '@emotion/css';
 import * as classes from './desc-form.styles';
 
 
@@ -37,8 +38,8 @@ export const DescFormComponent: React.FC = () => {
           id="description"
         ></textarea>
         <br />
-        <div className={classes.boxBtnSubmit}>
-          <button type="submit">Send</button>
+        <div className={cx(classes.boxBtnSubmit, { [classes.btnDisabled]: !!desc})}>
+          <button disabled={!desc} type="submit">Send</button>
         </div>
       </form>
     </div>

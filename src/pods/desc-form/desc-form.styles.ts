@@ -46,15 +46,20 @@ export const txtArea = css`
 export const boxBtnSubmit = css`
   width: 60px;
   height: 34px;
+  opacity: 0.5;
 
   button {
     background-color: blue;
     color: white;
     padding: 6px 12px;
     border-radius: 8px;
-    /* font-size: large; */
     font-size: 18px;
   }
+`;
+
+
+export const btnDisabled = css`
+  opacity: 1;
 
   &:active {
     margin: 1px;
@@ -65,8 +70,8 @@ export const boxBtnSubmit = css`
     button {
       padding: 6px 11px;
       font-size: 16px;
+      border: solid 2px rgba(255, 255, 0, 0.7);
     }
   }
 `;
-
 
