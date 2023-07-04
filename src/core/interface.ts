@@ -2,7 +2,12 @@
 interface GET_CHARACTERS {
   type: "GET_CHARACTERS";
   payload: Characters[];
-};
+}
+
+interface GET_CHARACTER {
+  type: "GET_CHARACTER";
+  payload: Characters;
+}
 
 export interface CREATE_DESCRIPTION {
   type: "CREATE_DESCRIPTION";
@@ -12,9 +17,7 @@ export interface CREATE_DESCRIPTION {
   };
 }
 
-
-export type All_Actions = GET_CHARACTERS | CREATE_DESCRIPTION;
-
+export type All_Actions = GET_CHARACTERS | GET_CHARACTER | CREATE_DESCRIPTION;
 
 //
 export interface Characters {
@@ -40,22 +43,21 @@ export interface Characters {
 
 
 //
-export const characters: Characters[] = [];
-
-
 export interface State {
   characters: Characters[];
+  character?: Characters;
 }
 
 export interface MyState {
   state: State;
   dispatch: React.Dispatch<All_Actions>;
-  getAlbums: (characters: Characters[]) => void;
+  getCharacters: (characters: Characters[]) => Promise<void>;
+  getCharacter: (id: number) => Promise<void>;
   createDescription: (characterId: number, description: string) => void;
 }
 
-
-
-
-
-
+// Consts
+export const initialState: State = {
+  characters: [],
+  character: {},
+};

@@ -9,6 +9,11 @@ export const MyReducer = (state: State, action: All_Actions) => {
         ...state,
         characters: action.payload,
       };
+    case "GET_CHARACTER":
+      return {
+        ...state,
+        character: action.payload,
+      };
     case "CREATE_DESCRIPTION":
       const updatedCharacters = state.characters.map((character) => {
         if (character.id === action.payload.characterId) {

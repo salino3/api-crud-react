@@ -10,9 +10,9 @@ export const Description: React.FC<Props> = ({item}) => {
 
 
   return (
-   <div className={classes.desc}>
-      <p className={classes.descTitle}>Description: </p>
-      <span>&nbsp; {item?.description}  </span>
-    </div> 
+    <div className={classes.desc}>
+      <h3 className={classes.descTitle}>Description: </h3>
+      <span>{" "}{item?.description} </span>
+    </div>
   );
 };
