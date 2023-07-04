@@ -1,13 +1,16 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { cx } from '@emotion/css';
+import { GlobalContext, MyState } from '@/core';
 import * as classes from './desc-form.styles';
+import { SwitchRoutes } from '@/router';
 
 
 export const DescFormComponent: React.FC = () => {
 
   const params = useParams();
-
+  const {createDescription} = React.useContext<MyState>(GlobalContext);
+  const navigate = useNavigate();
 
   const [desc, setDesc] = React.useState<string>("");
 
@@ -19,7 +22,10 @@ export const DescFormComponent: React.FC = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
     event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-    console.log(desc);
+      if(desc) {
+        createDescription(Number(params?.id), desc);
+        navigate(-1);
+      };
   };
     
   return (
