@@ -28,6 +28,20 @@ export const MyReducer = (state: State, action: All_Actions) => {
         ...state,
         characters: updatedCharacters,
       };
+    case "DELETE_DESCRIPTION":
+      const deleteDescriptionCharacter = state.characters.map((character) => {
+        if (character.id === action.payload.characterId) {
+          return {
+            ...character,
+            description: action.payload.emptyDescription,
+          };
+        }
+        return character;
+      });
+      return {
+        ...state,
+        characters: deleteDescriptionCharacter,
+      };
 
     default:
       return state;

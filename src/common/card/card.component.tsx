@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Characters } from '@/core';
+import { Characters, GlobalContext } from '@/core';
 import { Description } from '@/common/description';
 import { SwitchRoutes } from '@/router';
 import * as classes from './card.styles';
@@ -11,6 +11,8 @@ interface Props {
 
 export const Card: React.FC<Props> = (props) => {
  const {item} = props; 
+
+ const {deleteDescription} = React.useContext(GlobalContext);
 
   return (
     <div className={classes.container}>
@@ -23,11 +25,12 @@ export const Card: React.FC<Props> = (props) => {
         <div className={classes.boxBtns}>
           <Link
             to={`${SwitchRoutes.desc_form}/${item?.id}`}
-            className={classes.linkDesc}
-          >
-            Add Text
+            className={classes.linkDesc}>
+            {item?.description ? "Update" : "Add"} Text
           </Link>
-          <button className={classes.deleteDesc}>Delete</button>
+          <button onClick={() => deleteDescription(item?.id, "")} className={classes.deleteDesc}>
+            Delete
+          </button>
         </div>
         <h3>
           Name: <span>{item.name}</span>

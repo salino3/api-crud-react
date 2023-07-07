@@ -7,9 +7,9 @@ interface Props {
 };
 
 export const MyProvider: React.FC<Props> = ({ children }) => {
-
   const [state, dispatch] = React.useReducer(MyReducer, initialState);
 
+  //
   const getCharacters = React.useCallback(async () => {
     try {
       const response = await axios.get(
@@ -29,20 +29,22 @@ export const MyProvider: React.FC<Props> = ({ children }) => {
     getCharacters();
   }, []);
 
+  //
   const getCharacter = React.useCallback(async (id: number) => {
- try {
-   const response = await axios.get(
-     `https://rickandmortyapi.com/api/character/${id}`
-   );
-   dispatch({
-     type: "GET_CHARACTER",
-     payload: response.data,
-   });
- } catch (error) {
-   console.error(error);
- }
+    try {
+      const response = await axios.get(
+        `https://rickandmortyapi.com/api/character/${id}`
+      );
+      dispatch({
+        type: "GET_CHARACTER",
+        payload: response.data,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
+  //
   const createDescription = React.useCallback(
     (characterId: number, description: string) => {
       dispatch({
@@ -50,6 +52,20 @@ export const MyProvider: React.FC<Props> = ({ children }) => {
         payload: {
           characterId,
           description,
+        },
+      });
+    },
+    []
+  );
+
+  //
+  const deleteDescription = React.useCallback(
+    (characterId: number | undefined, emptyDescription: string) => {
+      dispatch({
+        type: "DELETE_DESCRIPTION",
+        payload: {
+          characterId,
+          emptyDescription,
         },
       });
     },
@@ -64,6 +80,7 @@ export const MyProvider: React.FC<Props> = ({ children }) => {
         getCharacters,
         getCharacter,
         createDescription,
+        deleteDescription
       }}
     >
       {children}
