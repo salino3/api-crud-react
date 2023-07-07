@@ -14,8 +14,8 @@ export const Body: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      Hola from Home Component!
       <FormSearch />
+      <h1 className={classes.title}>First Page (from 1 to 10)</h1>
       <div className={classes.contenedorList}>
         <BtnsPagination
           route={SwitchRoutes.second_page}

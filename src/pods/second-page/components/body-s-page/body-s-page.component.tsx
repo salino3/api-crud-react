@@ -13,8 +13,8 @@ export const BodySndPage: React.FC = () => {
   
   return (
     <div className={classes.root}>
-      Hola from second page list
       <FormSearch />
+      <h1 className={classes.title}>Second Page (from 11 to 20)</h1>
       <div className={classes.contenedorList}>
         <BtnsPagination
           route={SwitchRoutes.root}
