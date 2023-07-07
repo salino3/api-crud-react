@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Characters, GlobalContext, MyState } from '@/core';
-import { Card } from '../card';
+import { Card } from '@/common/card';
 import { SwitchRoutes } from '@/router';
 import { BtnsPagination, FormSearch } from '@/common';
 import * as classes from './body.styles';

@@ -52,6 +52,7 @@ export const linkDesc = css`
   border: solid 1px;
   padding: 0px 3px;
   border-radius: 2px;
+  cursor: pointer;
 `;
 
 export const deleteDesc = css`
@@ -63,4 +64,5 @@ export const deleteDesc = css`
   border: solid 1px;
   padding: 0px 3px;
   border-radius: 2px;
+  cursor: pointer;
 `;
