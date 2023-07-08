@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { cx } from '@emotion/css';
 import { Characters, GlobalContext, MyState } from '@/core';
 import { MyHooks } from '@/hooks';
-import { Footer, Navbar } from '@/common';
+import { Header, Footer } from "@/common";
 import * as classes from './desc-form.styles';
 
 
@@ -29,7 +29,7 @@ export const DescFormComponent: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <Navbar />
+      <Header />
       <div className={classes.container}>
         <h1 className={classes.title}> Description Form</h1>
         <Link

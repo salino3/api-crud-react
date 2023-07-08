@@ -6,6 +6,7 @@ export const root = css`
  flex-direction: column;
  align-items: center;
  height: 100%;
+ width: 100%;
  
 `;
 

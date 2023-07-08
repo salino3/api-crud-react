@@ -29,4 +29,6 @@ export const divCard = css`
   flex-direction: column;
   text-align: start;
   z-index: 2;
-`;
+  align-items: center;
+  
+  `;

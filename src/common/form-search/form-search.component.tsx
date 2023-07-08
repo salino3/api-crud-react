@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { CardInput } from "@/component";
+import { CardInput } from "@/components";
 import { SwitchRoutes } from "@/router";
 import * as classes from "./form-search.styles";
 
@@ -48,14 +48,15 @@ export const FormSearch: React.FC = () => {
   return (
     <div className={classes.container}>
       <form className={classes.formSearch} onSubmit={handleSubmit}>
-        <label htmlFor="name">Name or ID Character: </label>  <br />
+        <label htmlFor="name">Name or ID Character: </label> <br />
         <input
           onChange={handleChange}
           value={searchCharacter}
           type="text"
           id="name"
-          name="name" />
-          &nbsp;
+          name="name"
+        />
+        &nbsp;
         <button disabled={searchCharacter ? false : true} type="submit">
           Send
         </button>

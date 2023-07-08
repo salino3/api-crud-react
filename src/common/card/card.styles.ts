@@ -46,7 +46,7 @@ export const boxBtns = css`
 
 export const linkDesc = css`
   position: relative;
-  font-size: medium;
+  font-size: 14px;
   margin-bottom: 3px;
   color: blue;
   border: solid 1px;
@@ -57,7 +57,7 @@ export const linkDesc = css`
 
 export const deleteDesc = css`
   position: relative;
-  font-size: medium;
+  font-size: 14px;
   margin-bottom: 3px;
   background-color: transparent;
   color: red;

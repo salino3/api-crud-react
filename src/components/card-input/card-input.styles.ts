@@ -4,7 +4,6 @@ export const container = css`
   margin-top: 10px;
   position: absolute;
 
-
 `;
 
 export const divRows = css`
