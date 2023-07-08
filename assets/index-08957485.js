@@ -174,7 +174,9 @@ Error generating stack: `+i.message+`
   border: solid 2px blue;
 
 `,wv=A`
-
+  button {
+    cursor: pointer;
+  }
   @media (min-width: 725px) {
     display: flex;
     flex-direction: row;
