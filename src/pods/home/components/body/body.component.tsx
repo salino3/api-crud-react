@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Characters, GlobalContext, MyState } from '@/core';
-import { Card } from '../card';
+import { Card } from '@/common/card';
 import { SwitchRoutes } from '@/router';
 import { BtnsPagination, FormSearch } from '@/common';
 import * as classes from './body.styles';
@@ -14,8 +14,8 @@ export const Body: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      Hola from Home Component!
       <FormSearch />
+      <h1 className={classes.title}>First Page (from 1 to 10)</h1>
       <div className={classes.contenedorList}>
         <BtnsPagination
           route={SwitchRoutes.second_page}

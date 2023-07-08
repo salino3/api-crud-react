@@ -1,12 +1,36 @@
 import {css} from '@emotion/css';
 
 export const root = css`
+  
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ height: 100%;
+ width: 100%;
+ 
+`;
+
+export const container = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 12px;
+  gap: 12px;
 
 `;
 
 export const title = css`
   font-size: 42px;
-  text-align: center;
+`;
+
+export const linkBack = css`
+ 
+ border: solid blue 1px;
+ margin: 14px 0px;
+ color: blue;
+ font-size: 18px;
+ padding: 4px 8px;
 `;
 
 export const subTitle = css`

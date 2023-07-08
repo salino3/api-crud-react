@@ -46,21 +46,23 @@ export const boxBtns = css`
 
 export const linkDesc = css`
   position: relative;
-  font-size: medium;
+  font-size: 14px;
   margin-bottom: 3px;
   color: blue;
   border: solid 1px;
   padding: 0px 3px;
   border-radius: 2px;
+  cursor: pointer;
 `;
 
 export const deleteDesc = css`
   position: relative;
-  font-size: medium;
+  font-size: 14px;
   margin-bottom: 3px;
   background-color: transparent;
   color: red;
   border: solid 1px;
   padding: 0px 3px;
   border-radius: 2px;
+  cursor: pointer;
 `;

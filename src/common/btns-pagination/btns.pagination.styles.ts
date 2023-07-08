@@ -21,16 +21,17 @@ export const container = css`
 `;
 
 export const boxBtnMore = css`
-
-width: 54.5px;
+  width: 54.5px;
   button {
     background-color: grey;
+    cursor: pointer;
   }
 `;
 
 export const boxBtnPage = css`
   width: 90.5px;
-   button {
+  button {
     background-color: #ffb703;
+    cursor: pointer;
   }
 `;

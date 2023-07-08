@@ -9,7 +9,7 @@ interface GET_CHARACTER {
   payload: Characters;
 }
 
-export interface CREATE_DESCRIPTION {
+interface CREATE_DESCRIPTION {
   type: "CREATE_DESCRIPTION";
   payload: {
     characterId: number;
@@ -17,7 +17,20 @@ export interface CREATE_DESCRIPTION {
   };
 }
 
-export type All_Actions = GET_CHARACTERS | GET_CHARACTER | CREATE_DESCRIPTION;
+interface DELETE_DESCRIPTION {
+  type: "DELETE_DESCRIPTION";
+  payload: {
+    characterId: number | undefined;
+    emptyDescription: string;
+  };
+}
+
+export type All_Actions =
+  | GET_CHARACTERS
+  | GET_CHARACTER
+  | CREATE_DESCRIPTION
+  | DELETE_DESCRIPTION;
+
 
 //
 export interface Characters {
@@ -54,6 +67,7 @@ export interface MyState {
   getCharacters: (characters: Characters[]) => Promise<void>;
   getCharacter: (id: number) => Promise<void>;
   createDescription: (characterId: number, description: string) => void;
+  deleteDescription: (characterId: number | undefined, emptyDescription: string) => void;
 }
 
 // Consts
