@@ -190,7 +190,7 @@ Error generating stack: `+i.message+`
   z-index: 2;
   align-items: center;
   
-  `,vp=()=>{const e=Ni(),[t,n]=Y.useState(""),[r,o]=Y.useState(!0),i=Y.useRef(null),l=u=>{n(u.target.value),o(!0)},s=u=>{u.preventDefault();let a="";u&&u.target&&u.target.name&&u.target.name.value&&(a=u.target.name.value),e(`${Je.desc_form}/${a}`),n("")};return Y.useEffect(()=>{const u=a=>{i.current&&!i.current.contains(a.target)&&o(!1)};return document.addEventListener("click",u),()=>{document.removeEventListener("click",u)}},[]),x.jsxs("div",{className:vv,children:[x.jsxs("form",{className:wv,onSubmit:s,children:[x.jsx("label",{htmlFor:"name",children:"Name or ID Character: "})," ",x.jsx("br",{}),x.jsx("input",{onChange:l,value:t,type:"text",id:"name",name:"name"})," ",x.jsx("button",{disabled:!t,type:"submit",children:"Send"})]}),x.jsxs("div",{className:xv,ref:i,children:[r&&t?x.jsx(gv,{searchCharacter:t,setSearchCharacter:n}):""," "]})]})},Sv=A`
+`,vp=()=>{const e=Ni(),[t,n]=Y.useState(""),[r,o]=Y.useState(!0),i=Y.useRef(null),l=u=>{n(u.target.value),o(!0)},s=u=>{u.preventDefault();let a="";u&&u.target&&u.target.name&&u.target.name.value&&(a=u.target.name.value),e(`${Je.desc_form}/${a}`),n("")};return Y.useEffect(()=>{const u=a=>{i.current&&!i.current.contains(a.target)&&o(!1)};return document.addEventListener("click",u),()=>{document.removeEventListener("click",u)}},[]),x.jsxs("div",{className:vv,children:[x.jsxs("form",{className:wv,onSubmit:s,children:[x.jsx("label",{htmlFor:"name",children:"Name or ID Character: "})," ",x.jsx("br",{}),x.jsx("input",{onChange:l,value:t,type:"text",id:"name",name:"name"})," ",x.jsx("button",{disabled:!t,type:"submit",children:"Send"})]}),x.jsxs("div",{className:xv,ref:i,children:[r&&t?x.jsx(gv,{searchCharacter:t,setSearchCharacter:n}):""," "]})]})},Sv=A`
   border: solid 2px;
   min-width: 100%;
   min-height: 48px;
@@ -364,6 +364,7 @@ Error generating stack: `+i.message+`
     padding: 6px 12px;
     border-radius: 8px;
     font-size: 18px;
+    cursor: pointer;
   }
 `,Yv=A`
   opacity: 1;
