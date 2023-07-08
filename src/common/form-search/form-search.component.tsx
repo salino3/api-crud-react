@@ -17,10 +17,7 @@ export const FormSearch: React.FC = () => {
      event: any
    ) => {
      setFirst(event.target.value);
- 
-    //  console.log(event.target.value);
-    //  console.log(first);
-    //*  setToggleList(true);
+     setToggleList(true);
    };
 
    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
@@ -53,24 +50,31 @@ export const FormSearch: React.FC = () => {
      };
      document.addEventListener("click", handleClickOutside);
      return () => {
-       document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
      };
    }, []);
 
   return (
     <div className={classes.container}>
       <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name Character:</label>
-          <input
-            onChange={handleChange}
-            value={first}
-            type="text"
-            id="name"
-            name="name"
-          />
+        <label htmlFor="name">Name Character:</label>
+        <input
+          onChange={handleChange}
+          value={first}
+          type="text"
+          id="name"
+          name="name"
+        />
         <div ref={divCardRef}>
-        <CardInput first={first} setFirst={setFirst} />
+          {toggleList && first ? (
+            <CardInput first={first} setFirst={setFirst} />
+          ) : (
+            ""
+          )}{" "}
         </div>
+        <button disabled={first ? false : true} type="submit">
+          Send
+        </button>
       </form>
     </div>
   );
